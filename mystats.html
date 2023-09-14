@@ -9,5 +9,57 @@
         <p> Prawn biryani is a combination of juicy prawns and rice dish that includes variety of masalas,prawns,
             basmati rice which are altogether cooked and should keep dum so that in order to get flavours.</p>
         <img src="Prawns Biryani.jpg" alt="Prawns Biryani pic">
+        <br>
+        <hr>
+        <h1>Favourite Sports that I play</h1>
+        <table border="1.5px">
+          <tr>
+            <th>Sport_Name</th>
+            <th>Reason to Play</th>
+            <th>Weekly Duration</th>
+          </tr>
+          <tr>
+            <th>Swimming</th>
+            <th>Enhances flexibility and peace</th>
+            <th>2-3 hours</th>
+          </tr>
+          <tr>
+            <th>Soccer</th>
+            <th>Body fitness and hands moments</th>
+            <th>4-6 hours</th>
+          </tr>
+          <tr>
+            <th>Table tennis</th>
+            <th>Sharpens focus</th>
+            <th>2-4 hours</th>
+          </tr>
+          <tr>
+            <th>Basketball</th>
+            <th>Great for agility and fitnes</th>
+            <th>5-6 hours</th>
+          </tr>
+        </table>
+        <hr>
+        <pre>
+            if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $data = array();
+            $data['job_title']   = $_POST['job_title'];
+            $data['company']     = $_POST['company'];
+            $data['cat_id']      = $_POST['cat_id'];
+            $data['description'] = $_POST['description'];
+            $data['salary']      = $_POST['salary'];
+            $data['location']    = $_POST['location'];
+            $data['user']        = $_POST['user'];
+            $data['email']       = $_POST['email'];
+        
+            if($jobs->create($data)){
+                redirect("", "Your job has been listed", "success");
+            }else{
+                redirect("", "Something went wrong", "error");
+            }
+        
+        }
+        </pre>
+
     </body>
 </html>
